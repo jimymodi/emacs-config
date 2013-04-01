@@ -91,6 +91,15 @@
 (add-to-list 'flymake-allowed-file-name-masks '("\\.php$" flymake-php-init))
 
 
+;;; Natural Docs
+
+;; Javascript docstring generator
+(add-to-list 'load-path "~/emacs/site/naturaldocs")
+(load "nd-js")
+(add-hook 'js-mode-hook
+          (lambda () (local-set-key (kbd "C-c d") #'nd-js-doc)))
+
+
 ;;;; Editing and Outlining
 
 ;;; Markdown mode
